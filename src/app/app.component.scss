@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;    
+}
+
+$colors:(
+    primary: blue,
+    primary-light: lighten( blue, 40%)
+
+);
+@function color($color-name){
+    @return map-get($colors, $color-name);
+}
+
+$desktop: 570px;
+
+@mixin desktop{
+    @media (min-width:#{$desktop}) {
+        @content;
+    }
+}
+
+.display-way{
+
+
+
+    .split-left{
+        height: 100vh;
+        width: 100%;
+        background: url(../assets/images/kunalmore.png) center center no-repeat;
+        background-size: cover;
+
+        @include desktop{
+            width: 50%;
+            position: fixed;
+            overflow: hidden;
+        }
+
+        .bg-info{
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                color: #fff;
+                width: 80%;
+                margin: 0 auto;
+                margin-top: 100%;
+
+                @include desktop{
+                    margin-top: 50%;
+                }
+        }
+
+    }
+    .split-left:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: #185a9d;
+        background-image: linear-gradient(to left top, #43cea2 , #185a9d);
+        opacity: 0.85;
+    }
+
+    .split-right{
+        @include desktop{
+            width: 50%;
+            float: right;
+        }
+    }
+}
+

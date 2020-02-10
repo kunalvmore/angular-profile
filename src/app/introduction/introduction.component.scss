@@ -1,0 +1,32 @@
+$colors:(
+    primary:  rgb(42, 84, 245),
+    primary-light: lighten( blue, 40%)
+
+);
+@function color($color-name){
+    @return map-get($colors, $color-name);
+}
+
+
+
+.intro{
+    padding: 25px 0px;
+  
+
+    h2{
+        color:color(primary);
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 1.5;
+        text-transform: uppercase;
+    }
+    .intro-p{
+        margin: 10px 0px;
+        font-size: 14px;
+        line-height: 1.5;
+        font-weight: 300;
+    }
+    .intro-blue-p{
+        color: color(primary);
+    }
+}

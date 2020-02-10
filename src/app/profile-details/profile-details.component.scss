@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+$colors:(
+    primary: blue,
+    primary-light: lighten( blue, 40%)
+
+);
+@function color($color-name){
+    @return map-get($colors, $color-name);
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+}

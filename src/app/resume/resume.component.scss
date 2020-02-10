@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+$colors:(
+    primary:  rgb(42, 84, 245),
+    primary-light: lighten( rgb(42, 84, 245), 40%)
+
+);
+@function color($color-name){
+    @return map-get($colors, $color-name);
+}
+
+.resume-link{
+    margin: 20px 0px;
+    margin-bottom: 50px;
+    text-align: center;
+
+    a{
+        text-decoration: none;
+        color: color(primary);
+        background-color: color(primary-light);
+        padding: 15px 10px;
+    }
+    
+}
